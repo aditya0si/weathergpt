@@ -1,0 +1,502 @@
+[
+  {
+    "id": "eval_en_01",
+    "category": "current_weather",
+    "language": "en",
+    "prompt": "What is the current temperature and humidity in Guwahati?",
+    "expected_tools": ["get_current_weather"],
+    "expected_keywords": ["guwahati", "temperature", "humidity", "°c"],
+    "min_length": 40,
+    "description": "Basic English current weather query for Guwahati"
+  },
+  {
+    "id": "eval_en_02",
+    "category": "forecast",
+    "language": "en",
+    "prompt": "Give me the 7-day weather forecast for New Delhi.",
+    "expected_tools": ["get_forecast"],
+    "expected_keywords": ["delhi", "forecast", "high", "low"],
+    "min_length": 60,
+    "description": "Multi-day forecast in New Delhi"
+  },
+  {
+    "id": "eval_en_03",
+    "category": "imd_alerts",
+    "language": "en",
+    "prompt": "Are there any severe weather alerts or rain warnings in Mumbai?",
+    "expected_tools": ["get_imd_alerts"],
+    "expected_keywords": ["mumbai", "alert", "warning"],
+    "min_length": 50,
+    "description": "IMD alert warning query for Mumbai"
+  },
+  {
+    "id": "eval_en_04",
+    "category": "air_quality",
+    "language": "en",
+    "prompt": "What is the AQI and PM2.5 air pollution level in Delhi?",
+    "expected_tools": ["get_air_quality"],
+    "expected_keywords": ["aqi", "pm2.5", "delhi", "quality"],
+    "min_length": 40,
+    "description": "Air quality index query for Delhi"
+  },
+  {
+    "id": "eval_en_05",
+    "category": "agromet",
+    "language": "en",
+    "prompt": "I am growing tea in Jorhat. What is the agricultural weather advisory for spraying pesticides?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["tea", "jorhat", "advisory", "spray"],
+    "min_length": 60,
+    "description": "Agro-meteorological advisory for tea crop in Jorhat"
+  },
+  {
+    "id": "eval_en_06",
+    "category": "agromet",
+    "language": "en",
+    "prompt": "How should I manage irrigation for paddy crop in Guwahati given the rain forecast?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["paddy", "rice", "irrigation", "guwahati"],
+    "min_length": 60,
+    "description": "Paddy crop irrigation advice in Assam"
+  },
+  {
+    "id": "eval_en_07",
+    "category": "climate_qa",
+    "language": "en",
+    "prompt": "Explain what Bordoisila means in Assam meteorology.",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["bordoisila", "assam", "pre-monsoon", "thunderstorm"],
+    "min_length": 80,
+    "description": "Climate science explanation of Bordoisila squalls"
+  },
+  {
+    "id": "eval_en_08",
+    "category": "climate_qa",
+    "language": "en",
+    "prompt": "How do Western Disturbances bring winter rainfall to Northern India?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["western disturbance", "cyclone", "mediterranean", "winter"],
+    "min_length": 80,
+    "description": "Climate mechanism of Western Disturbances"
+  },
+  {
+    "id": "eval_en_09",
+    "category": "climate_qa",
+    "language": "en",
+    "prompt": "What is the relationship between El Nino and the Indian Southwest Monsoon?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["el nino", "monsoon", "pacific", "ocean"],
+    "min_length": 70,
+    "description": "ENSO teleconnection impact on Indian monsoon"
+  },
+  {
+    "id": "eval_en_10",
+    "category": "gfs_physics",
+    "language": "en",
+    "prompt": "Show me the GFS numerical sounding and CAPE atmospheric instability for Kolkata.",
+    "expected_tools": ["get_gfs_prediction"],
+    "expected_keywords": ["cape", "gfs", "kolkata", "instability"],
+    "min_length": 50,
+    "description": "NOAA GFS numerical weather prediction query"
+  },
+  {
+    "id": "eval_en_11",
+    "category": "current_weather",
+    "language": "en",
+    "prompt": "What is the wind speed and cloud cover in Shillong right now?",
+    "expected_tools": ["get_current_weather"],
+    "expected_keywords": ["shillong", "wind", "speed"],
+    "min_length": 40,
+    "description": "Current weather in Meghalaya hill station"
+  },
+  {
+    "id": "eval_en_12",
+    "category": "forecast",
+    "language": "en",
+    "prompt": "Will it rain in Dibrugarh over the next 5 days?",
+    "expected_tools": ["get_forecast"],
+    "expected_keywords": ["dibrugarh", "rain", "probability"],
+    "min_length": 50,
+    "description": "Rain forecast query for Dibrugarh"
+  },
+  {
+    "id": "eval_en_13",
+    "category": "imd_alerts",
+    "language": "en",
+    "prompt": "What color warning has IMD issued for East Khasi Hills Shillong?",
+    "expected_tools": ["get_imd_alerts"],
+    "expected_keywords": ["shillong", "khasi", "alert", "rainfall"],
+    "min_length": 50,
+    "description": "IMD color warning alert check"
+  },
+  {
+    "id": "eval_en_14",
+    "category": "air_quality",
+    "language": "en",
+    "prompt": "Is the air pollution hazardous in Kolkata today?",
+    "expected_tools": ["get_air_quality"],
+    "expected_keywords": ["kolkata", "aqi", "air"],
+    "min_length": 40,
+    "description": "Air quality index query for Kolkata"
+  },
+  {
+    "id": "eval_en_15",
+    "category": "agromet",
+    "language": "en",
+    "prompt": "What is the recommended sowing weather for mustard in Assam?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["mustard", "sowing", "soil", "moisture"],
+    "min_length": 50,
+    "description": "Mustard crop advisory"
+  },
+  {
+    "id": "eval_en_16",
+    "category": "climate_qa",
+    "language": "en",
+    "prompt": "Why does the Bay of Bengal get more cyclones than the Arabian Sea?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["bay of bengal", "arabian sea", "cyclone", "temperature"],
+    "min_length": 70,
+    "description": "Comparative cyclogenesis in Indian seas"
+  },
+  {
+    "id": "eval_en_17",
+    "category": "current_weather",
+    "language": "en",
+    "prompt": "Check current weather condition in Silchar.",
+    "expected_tools": ["get_current_weather"],
+    "expected_keywords": ["silchar", "temperature"],
+    "min_length": 40,
+    "description": "Current weather for Silchar Cachar district"
+  },
+  {
+    "id": "eval_en_18",
+    "category": "agromet",
+    "language": "en",
+    "prompt": "When should farmers harvest jute crop according to weather in Nagaon?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["jute", "nagaon", "harvesting", "retting"],
+    "min_length": 50,
+    "description": "Jute harvesting advisory"
+  },
+  {
+    "id": "eval_en_19",
+    "category": "climate_qa",
+    "language": "en",
+    "prompt": "What criteria does IMD use to declare a Heatwave and what is Urban Heat Island?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["heatwave", "urban heat island", "temperature", "imd"],
+    "min_length": 70,
+    "description": "Heatwave declaration criteria"
+  },
+  {
+    "id": "eval_en_20",
+    "category": "forecast",
+    "language": "en",
+    "prompt": "What is the 7-day temperature trend for Bengaluru?",
+    "expected_tools": ["get_forecast"],
+    "expected_keywords": ["bengaluru", "forecast", "max", "min"],
+    "min_length": 50,
+    "description": "Weekly temperature forecast in Bengaluru"
+  },
+  {
+    "id": "eval_hi_01",
+    "category": "current_weather",
+    "language": "hi",
+    "prompt": "दिल्ली में आज का तापमान और मौसम कैसा है?",
+    "expected_tools": ["get_current_weather"],
+    "expected_keywords": ["तापमान", "मौसम", "दिल्ली"],
+    "min_length": 40,
+    "description": "Hindi current weather query for Delhi"
+  },
+  {
+    "id": "eval_hi_02",
+    "category": "forecast",
+    "language": "hi",
+    "prompt": "लखनऊ में अगले सात दिनों का मौसम पूर्वानुमान बताएं।",
+    "expected_tools": ["get_forecast"],
+    "expected_keywords": ["लखनऊ", "पूर्वानुमान", "तापमान"],
+    "min_length": 50,
+    "description": "Hindi 7-day forecast query for Lucknow"
+  },
+  {
+    "id": "eval_hi_03",
+    "category": "imd_alerts",
+    "language": "hi",
+    "prompt": "क्या मुंबई में मौसम विभाग ने कोई भारी बारिश या हाई टाइड का अलर्ट जारी किया है?",
+    "expected_tools": ["get_imd_alerts"],
+    "expected_keywords": ["मुंबई", "चेतावनी", "अलर्ट"],
+    "min_length": 50,
+    "description": "Hindi IMD alert warning for Mumbai"
+  },
+  {
+    "id": "eval_hi_04",
+    "category": "air_quality",
+    "language": "hi",
+    "prompt": "आज दिल्ली में वायु प्रदूषण और एक्यूआई (AQI) का क्या स्तर है?",
+    "expected_tools": ["get_air_quality"],
+    "expected_keywords": ["वायु गुणवत्ता", "aqi", "प्रदूषण"],
+    "min_length": 40,
+    "description": "Hindi air quality query for Delhi"
+  },
+  {
+    "id": "eval_hi_05",
+    "category": "agromet",
+    "language": "hi",
+    "prompt": "धान की फसल में पानी और कीटनाशक छिड़काव के लिए क्या सलाह है?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["धान", "फसल", "सलाह", "छिड़काव"],
+    "min_length": 50,
+    "description": "Hindi paddy agro advisory"
+  },
+  {
+    "id": "eval_hi_06",
+    "category": "agromet",
+    "language": "hi",
+    "prompt": "गेहूं की बुवाई के बाद पहली सिंचाई (CRI अवस्था) कब करनी चाहिए?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["गेहूं", "सिंचाई", "सलाह"],
+    "min_length": 50,
+    "description": "Hindi wheat irrigation advice"
+  },
+  {
+    "id": "eval_hi_07",
+    "category": "climate_qa",
+    "language": "hi",
+    "prompt": "पश्चिमी विक्षोभ (Western Disturbance) क्या है और यह उत्तर भारत में बारिश कैसे लाता है?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["पश्चिमी विक्षोभ", "भूमध्य सागर", "वर्षा"],
+    "min_length": 70,
+    "description": "Hindi Western Disturbance explanation"
+  },
+  {
+    "id": "eval_hi_08",
+    "category": "climate_qa",
+    "language": "hi",
+    "prompt": "दक्षिण-पश्चिम मॉनसून भारत में कैसे आता है?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["मॉनसून", "दक्षिण-पश्चिम", "वर्षा"],
+    "min_length": 70,
+    "description": "Hindi Southwest Monsoon mechanism"
+  },
+  {
+    "id": "eval_hi_09",
+    "category": "climate_qa",
+    "language": "hi",
+    "prompt": "असम की बोरदोईसिला और बंगाल की कालवैशाखी क्या होती हैं?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["बोरदोईसिला", "कालवैशाखी", "आंधी-तूफान"],
+    "min_length": 70,
+    "description": "Hindi Bordoisila & Kalbaishakhi query"
+  },
+  {
+    "id": "eval_hi_10",
+    "category": "current_weather",
+    "language": "hi",
+    "prompt": "जयपुर में हवा की गति और आर्द्रता कितनी है?",
+    "expected_tools": ["get_current_weather"],
+    "expected_keywords": ["जयपुर", "तापमान", "हवा"],
+    "min_length": 40,
+    "description": "Hindi current weather in Jaipur"
+  },
+  {
+    "id": "eval_hi_11",
+    "category": "agromet",
+    "language": "hi",
+    "prompt": "सरसों की फसल की बुवाई के लिए मौसम कैसा होना चाहिए?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["सरसों", "बुवाई", "नमी"],
+    "min_length": 50,
+    "description": "Hindi mustard advisory"
+  },
+  {
+    "id": "eval_hi_12",
+    "category": "climate_qa",
+    "language": "hi",
+    "prompt": "लू (Heatwave) किसे कहते हैं और मौसम विभाग इसे कब घोषित करता है?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["लू", "तापमान", "मौसम विभाग"],
+    "min_length": 60,
+    "description": "Hindi heatwave criteria"
+  },
+  {
+    "id": "eval_hi_13",
+    "category": "current_weather",
+    "language": "hi",
+    "prompt": "पटना में आज बारिश की संभावना क्या है?",
+    "expected_tools": ["get_current_weather"],
+    "expected_keywords": ["पटना", "वर्षा", "तापमान"],
+    "min_length": 40,
+    "description": "Hindi rain probability for Patna"
+  },
+  {
+    "id": "eval_hi_14",
+    "category": "forecast",
+    "language": "hi",
+    "prompt": "भोपाल में इस सप्ताह का मौसम कैसा रहेगा?",
+    "expected_tools": ["get_forecast"],
+    "expected_keywords": ["भोपाल", "पूर्वानुमान"],
+    "min_length": 50,
+    "description": "Hindi weekly forecast for Bhopal"
+  },
+  {
+    "id": "eval_hi_15",
+    "category": "gfs_physics",
+    "language": "hi",
+    "prompt": "कोलकाता के लिए वायुमंडलीय अस्थिरता और जीएफएस मॉडल की स्थिति दिखाएं।",
+    "expected_tools": ["get_gfs_prediction"],
+    "expected_keywords": ["gfs", "कोलकाता", "cape"],
+    "min_length": 50,
+    "description": "Hindi GFS model query"
+  },
+  {
+    "id": "eval_as_01",
+    "category": "current_weather",
+    "language": "as",
+    "prompt": "গুৱাহাটীত বৰ্তমান উষ্ণতা আৰু বতৰৰ অৱস্থা কেনেকুৱা?",
+    "expected_tools": ["get_current_weather"],
+    "expected_keywords": ["গুৱাহাটী", "উষ্ণতা", "বতৰ"],
+    "min_length": 40,
+    "description": "Assamese current weather query for Guwahati"
+  },
+  {
+    "id": "eval_as_02",
+    "category": "forecast",
+    "language": "as",
+    "prompt": "ডিব্ৰুগড়ৰ অহা ৭ দিনৰ বতৰৰ পূৰ্বানুমান দিয়ক।",
+    "expected_tools": ["get_forecast"],
+    "expected_keywords": ["ডিব্ৰুগড়", "পূৰ্বানুমান", "উষ্ণতা", "বৰষুণ"],
+    "min_length": 50,
+    "description": "Assamese 7-day forecast for Dibrugarh"
+  },
+  {
+    "id": "eval_as_03",
+    "category": "imd_alerts",
+    "language": "as",
+    "prompt": "কামৰূপ মহানগৰ আৰু অসমৰ বাবে বতৰ বিজ্ঞান কেন্দ্ৰৰ কিবা সতৰ্কবাৰ্তা আছেনে?",
+    "expected_tools": ["get_imd_alerts"],
+    "expected_keywords": ["সতৰ্কবাৰ্তা", "বজ্ৰপাত", "নিৰাপত্তা"],
+    "min_length": 50,
+    "description": "Assamese IMD severe weather alert query"
+  },
+  {
+    "id": "eval_as_04",
+    "category": "agromet",
+    "language": "as",
+    "prompt": "যোৰহাটত চাহ খেতিৰ বাবে বতৰ অনুযায়ী কি পৰামৰ্শ আছে?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["চাহ", "যোৰহাট", "পৰামৰ্শ", "পানী"],
+    "min_length": 50,
+    "description": "Assamese tea crop agro advisory"
+  },
+  {
+    "id": "eval_as_05",
+    "category": "agromet",
+    "language": "as",
+    "prompt": "শালি ধানৰ পথাৰত পানী আৰু সাৰ প্ৰয়োগৰ বাবে কৃষকসকলে কি কৰা উচিত?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["ধান", "পথাৰ", "পৰামৰ্শ", "জলসিঞ্চন"],
+    "min_length": 50,
+    "description": "Assamese paddy crop farming advice"
+  },
+  {
+    "id": "eval_as_06",
+    "category": "climate_qa",
+    "language": "as",
+    "prompt": "অসমৰ বৰদৈচিলা ধুমুহাৰ বৈজ্ঞানিক কাৰণ আৰু লোকবিশ্বাস কি?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["বৰদৈচিলা", "ধুমুহা", "বংগোপসাগৰ", "মাকৰ ঘৰলৈ"],
+    "min_length": 70,
+    "description": "Assamese Bordoisila cultural and scientific explanation"
+  },
+  {
+    "id": "eval_as_07",
+    "category": "climate_qa",
+    "language": "as",
+    "prompt": "দক্ষিণ-পশ্চিম মৌচুমী বায়ুয়ে অসম আৰু উত্তৰ-পূৰ্বাঞ্চলত কেনেদৰে বৰষুণ আনে?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["মৌচুমী", "দক্ষিণ-পশ্চিম", "বৰষুণ", "বংগোপসাগৰ"],
+    "min_length": 70,
+    "description": "Assamese Southwest Monsoon explanation"
+  },
+  {
+    "id": "eval_as_08",
+    "category": "air_quality",
+    "language": "as",
+    "prompt": "গুৱাহাটী মহানগৰৰ বায়ুৰ গুণমান সূচক (AQI) আৰু প্ৰদূষণৰ মাত্ৰা কিমান?",
+    "expected_tools": ["get_air_quality"],
+    "expected_keywords": ["বায়ুৰ গুণমান", "aqi", "প্ৰদূষণ"],
+    "min_length": 40,
+    "description": "Assamese air quality query for Guwahati"
+  },
+  {
+    "id": "eval_as_09",
+    "category": "agromet",
+    "language": "as",
+    "prompt": "নগাঁৱত মৰাপাট কটা আৰু জাগ দিয়াৰ বাবে বতৰ কেনেকুৱা হ'ব লাগে?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["মৰাপাট", "নগাঁও", "পৰামৰ্শ"],
+    "min_length": 50,
+    "description": "Assamese jute advisory for Nagaon"
+  },
+  {
+    "id": "eval_as_10",
+    "category": "current_weather",
+    "language": "as",
+    "prompt": "তেজপুৰত আজি বৰষুণ হোৱাৰ সম্ভাৱনা আছেনে?",
+    "expected_tools": ["get_current_weather"],
+    "expected_keywords": ["তেজপুৰ", "উষ্ণতা", "বৰষুণ"],
+    "min_length": 40,
+    "description": "Assamese rain query for Tezpur"
+  },
+  {
+    "id": "eval_as_11",
+    "category": "agromet",
+    "language": "as",
+    "prompt": "সৰিয়হ খেতিৰ বাবে মাটি প্ৰস্তুতি আৰু বীজ সিঁচাৰ উপযুক্ত সময় কেতিয়া?",
+    "expected_tools": ["get_agromet_advisory"],
+    "expected_keywords": ["সৰিয়হ", "মাটি", "পৰামৰ্শ"],
+    "min_length": 50,
+    "description": "Assamese mustard crop farming advice"
+  },
+  {
+    "id": "eval_as_12",
+    "category": "imd_alerts",
+    "language": "as",
+    "prompt": "মেঘালয়ৰ চেৰাপুঞ্জী আৰু শ্বিলঙত প্ৰবল বৰষুণৰ বাবে কি সতৰ্কবাৰ্তা জাৰি কৰা হৈছে?",
+    "expected_tools": ["get_imd_alerts"],
+    "expected_keywords": ["সতৰ্কবাৰ্তা", "ভূমিস্খলন", "বৰষুণ"],
+    "min_length": 50,
+    "description": "Assamese Meghalaya heavy rain alert"
+  },
+  {
+    "id": "eval_as_13",
+    "category": "current_weather",
+    "language": "as",
+    "prompt": "শিলচৰত বৰ্তমান আৰ্দ্ৰতা আৰু বতাহৰ গতি কিমান?",
+    "expected_tools": ["get_current_weather"],
+    "expected_keywords": ["শিলচৰ", "আৰ্দ্ৰতা", "বতাহ"],
+    "min_length": 40,
+    "description": "Assamese current weather for Silchar"
+  },
+  {
+    "id": "eval_as_14",
+    "category": "climate_qa",
+    "language": "as",
+    "prompt": "এল নিনো আৰু ভাৰত মহাসাগৰীয় ডাইপোল (IOD) কি?",
+    "expected_tools": ["search_climate_knowledge"],
+    "expected_keywords": ["এল নিনো", "ডাইপোল", "মৌচুমী"],
+    "min_length": 60,
+    "description": "Assamese ENSO and IOD explanation"
+  },
+  {
+    "id": "eval_as_15",
+    "category": "forecast",
+    "language": "as",
+    "prompt": "কাইলৈ নগাঁও জিলাত বতৰ কেনেকুৱা থাকিব?",
+    "expected_tools": ["get_forecast"],
+    "expected_keywords": ["নগাঁও", "পূৰ্বানুমান", "উষ্ণতা"],
+    "min_length": 40,
+    "description": "Assamese tomorrow's forecast for Nagaon"
+  }
+]

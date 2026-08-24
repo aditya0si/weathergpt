@@ -1,0 +1,3 @@
+# SIH26068 — WeatherGPT (weathergpt)
+Conversational AI weather platform: LLM agent with tool-calling over IMD/Open-Meteo/GFS APIs; multilingual (English + Hindi + one NE language); alerts, forecast queries, climate Q&A.
+Stack: FastAPI + React chat UI + function-calling LLM. Include evals/ with 50 question->expected-answer pairs, latency and correctness scoring. HF artifact: fine-tuned/evaluated Indic model card or multilingual eval dataset.

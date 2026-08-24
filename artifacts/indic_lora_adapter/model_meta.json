@@ -1,0 +1,13 @@
+{
+  "model_id": "weathergpt-indic-8b-instruct",
+  "base_model": "meta-llama/Meta-Llama-3-8B-Instruct",
+  "languages": [
+    "en",
+    "hi",
+    "as"
+  ],
+  "dataset_size_samples": 150,
+  "final_loss": 1.0545,
+  "final_perplexity": 2.87,
+  "training_completed_at": "2026-08-24T18:17:42Z"
+}

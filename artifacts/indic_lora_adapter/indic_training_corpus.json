@@ -1,0 +1,1052 @@
+[
+  {
+    "id": "sample_0001",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in Guwahati.",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in Guwahati: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0002",
+    "language": "hi",
+    "instruction": "Dibrugarh में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarh के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0003",
+    "language": "as",
+    "instruction": "New Delhiত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhiৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0004",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in Lucknow.",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in Lucknow: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0005",
+    "language": "hi",
+    "instruction": "Kolkata में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkata के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0006",
+    "language": "as",
+    "instruction": "Jorhatত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhatৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0007",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in Shillong.",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in Shillong: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0008",
+    "language": "hi",
+    "instruction": "Guwahati में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahati के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0009",
+    "language": "as",
+    "instruction": "Dibrugarhত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarhৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0010",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in New Delhi.",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in New Delhi: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0011",
+    "language": "hi",
+    "instruction": "Lucknow में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknow के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0012",
+    "language": "as",
+    "instruction": "Kolkataত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkataৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0013",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in Jorhat.",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in Jorhat: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0014",
+    "language": "hi",
+    "instruction": "Shillong में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillong के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0015",
+    "language": "as",
+    "instruction": "Guwahatiত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahatiৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0016",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in Dibrugarh.",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in Dibrugarh: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0017",
+    "language": "hi",
+    "instruction": "New Delhi में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhi के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0018",
+    "language": "as",
+    "instruction": "Lucknowত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknowৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0019",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in Kolkata.",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in Kolkata: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0020",
+    "language": "hi",
+    "instruction": "Jorhat में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhat के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0021",
+    "language": "as",
+    "instruction": "Shillongত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillongৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0022",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in Guwahati.",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in Guwahati: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0023",
+    "language": "hi",
+    "instruction": "Dibrugarh में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarh के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0024",
+    "language": "as",
+    "instruction": "New Delhiত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhiৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0025",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in Lucknow.",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in Lucknow: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0026",
+    "language": "hi",
+    "instruction": "Kolkata में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkata के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0027",
+    "language": "as",
+    "instruction": "Jorhatত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhatৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0028",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in Shillong.",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in Shillong: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0029",
+    "language": "hi",
+    "instruction": "Guwahati में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahati के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0030",
+    "language": "as",
+    "instruction": "Dibrugarhত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarhৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0031",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in New Delhi.",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in New Delhi: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0032",
+    "language": "hi",
+    "instruction": "Lucknow में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknow के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0033",
+    "language": "as",
+    "instruction": "Kolkataত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkataৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0034",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in Jorhat.",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in Jorhat: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0035",
+    "language": "hi",
+    "instruction": "Shillong में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillong के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0036",
+    "language": "as",
+    "instruction": "Guwahatiত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahatiৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0037",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in Dibrugarh.",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in Dibrugarh: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0038",
+    "language": "hi",
+    "instruction": "New Delhi में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhi के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0039",
+    "language": "as",
+    "instruction": "Lucknowত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknowৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0040",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in Kolkata.",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in Kolkata: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0041",
+    "language": "hi",
+    "instruction": "Jorhat में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhat के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0042",
+    "language": "as",
+    "instruction": "Shillongত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillongৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0043",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in Guwahati.",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in Guwahati: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0044",
+    "language": "hi",
+    "instruction": "Dibrugarh में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarh के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0045",
+    "language": "as",
+    "instruction": "New Delhiত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhiৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0046",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in Lucknow.",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in Lucknow: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0047",
+    "language": "hi",
+    "instruction": "Kolkata में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkata के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0048",
+    "language": "as",
+    "instruction": "Jorhatত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhatৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0049",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in Shillong.",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in Shillong: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0050",
+    "language": "hi",
+    "instruction": "Guwahati में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahati के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0051",
+    "language": "as",
+    "instruction": "Dibrugarhত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarhৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0052",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in New Delhi.",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in New Delhi: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0053",
+    "language": "hi",
+    "instruction": "Lucknow में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknow के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0054",
+    "language": "as",
+    "instruction": "Kolkataত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkataৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0055",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in Jorhat.",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in Jorhat: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0056",
+    "language": "hi",
+    "instruction": "Shillong में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillong के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0057",
+    "language": "as",
+    "instruction": "Guwahatiত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahatiৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0058",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in Dibrugarh.",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in Dibrugarh: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0059",
+    "language": "hi",
+    "instruction": "New Delhi में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhi के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0060",
+    "language": "as",
+    "instruction": "Lucknowত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknowৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0061",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in Kolkata.",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in Kolkata: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0062",
+    "language": "hi",
+    "instruction": "Jorhat में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhat के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0063",
+    "language": "as",
+    "instruction": "Shillongত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillongৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0064",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in Guwahati.",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in Guwahati: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0065",
+    "language": "hi",
+    "instruction": "Dibrugarh में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarh के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0066",
+    "language": "as",
+    "instruction": "New Delhiত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhiৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0067",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in Lucknow.",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in Lucknow: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0068",
+    "language": "hi",
+    "instruction": "Kolkata में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkata के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0069",
+    "language": "as",
+    "instruction": "Jorhatত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhatৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0070",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in Shillong.",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in Shillong: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0071",
+    "language": "hi",
+    "instruction": "Guwahati में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahati के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0072",
+    "language": "as",
+    "instruction": "Dibrugarhত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarhৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0073",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in New Delhi.",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in New Delhi: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0074",
+    "language": "hi",
+    "instruction": "Lucknow में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknow के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0075",
+    "language": "as",
+    "instruction": "Kolkataত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkataৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0076",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in Jorhat.",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in Jorhat: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0077",
+    "language": "hi",
+    "instruction": "Shillong में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillong के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0078",
+    "language": "as",
+    "instruction": "Guwahatiত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahatiৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0079",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in Dibrugarh.",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in Dibrugarh: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0080",
+    "language": "hi",
+    "instruction": "New Delhi में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhi के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0081",
+    "language": "as",
+    "instruction": "Lucknowত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknowৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0082",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in Kolkata.",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in Kolkata: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0083",
+    "language": "hi",
+    "instruction": "Jorhat में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhat के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0084",
+    "language": "as",
+    "instruction": "Shillongত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillongৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0085",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in Guwahati.",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in Guwahati: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0086",
+    "language": "hi",
+    "instruction": "Dibrugarh में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarh के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0087",
+    "language": "as",
+    "instruction": "New Delhiত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhiৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0088",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in Lucknow.",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in Lucknow: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0089",
+    "language": "hi",
+    "instruction": "Kolkata में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkata के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0090",
+    "language": "as",
+    "instruction": "Jorhatত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhatৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0091",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in Shillong.",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in Shillong: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0092",
+    "language": "hi",
+    "instruction": "Guwahati में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahati के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0093",
+    "language": "as",
+    "instruction": "Dibrugarhত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarhৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0094",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in New Delhi.",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in New Delhi: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0095",
+    "language": "hi",
+    "instruction": "Lucknow में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknow के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0096",
+    "language": "as",
+    "instruction": "Kolkataত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkataৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0097",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in Jorhat.",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in Jorhat: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0098",
+    "language": "hi",
+    "instruction": "Shillong में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillong के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0099",
+    "language": "as",
+    "instruction": "Guwahatiত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahatiৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0100",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in Dibrugarh.",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in Dibrugarh: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0101",
+    "language": "hi",
+    "instruction": "New Delhi में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhi के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0102",
+    "language": "as",
+    "instruction": "Lucknowত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknowৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0103",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in Kolkata.",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in Kolkata: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0104",
+    "language": "hi",
+    "instruction": "Jorhat में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhat के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0105",
+    "language": "as",
+    "instruction": "Shillongত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillongৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0106",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in Guwahati.",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in Guwahati: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0107",
+    "language": "hi",
+    "instruction": "Dibrugarh में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarh के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0108",
+    "language": "as",
+    "instruction": "New Delhiত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhiৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0109",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in Lucknow.",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in Lucknow: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0110",
+    "language": "hi",
+    "instruction": "Kolkata में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkata के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0111",
+    "language": "as",
+    "instruction": "Jorhatত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhatৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0112",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in Shillong.",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in Shillong: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0113",
+    "language": "hi",
+    "instruction": "Guwahati में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahati के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0114",
+    "language": "as",
+    "instruction": "Dibrugarhত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarhৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0115",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in New Delhi.",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in New Delhi: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0116",
+    "language": "hi",
+    "instruction": "Lucknow में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknow के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0117",
+    "language": "as",
+    "instruction": "Kolkataত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkataৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0118",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in Jorhat.",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in Jorhat: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0119",
+    "language": "hi",
+    "instruction": "Shillong में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillong के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0120",
+    "language": "as",
+    "instruction": "Guwahatiত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahatiৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0121",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in Dibrugarh.",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in Dibrugarh: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0122",
+    "language": "hi",
+    "instruction": "New Delhi में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhi के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0123",
+    "language": "as",
+    "instruction": "Lucknowত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknowৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0124",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in Kolkata.",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in Kolkata: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0125",
+    "language": "hi",
+    "instruction": "Jorhat में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhat के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0126",
+    "language": "as",
+    "instruction": "Shillongত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillongৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0127",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in Guwahati.",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in Guwahati: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0128",
+    "language": "hi",
+    "instruction": "Dibrugarh में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarh के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0129",
+    "language": "as",
+    "instruction": "New Delhiত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhiৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0130",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in Lucknow.",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in Lucknow: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0131",
+    "language": "hi",
+    "instruction": "Kolkata में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkata के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0132",
+    "language": "as",
+    "instruction": "Jorhatত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhatৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0133",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in Shillong.",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in Shillong: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0134",
+    "language": "hi",
+    "instruction": "Guwahati में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahati के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0135",
+    "language": "as",
+    "instruction": "Dibrugarhত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarhৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0136",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Paddy in New Delhi.",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Paddy in New Delhi: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0137",
+    "language": "hi",
+    "instruction": "Lucknow में Tea की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknow के मौसम को देखते हुए Tea की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0138",
+    "language": "as",
+    "instruction": "Kolkataত Mustard খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Kolkataৰ বতৰৰ ওপৰত ভিত্তি কৰি Mustard শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0139",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Wheat in Jorhat.",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Wheat in Jorhat: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0140",
+    "language": "hi",
+    "instruction": "Shillong में Jute की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillong के मौसम को देखते हुए Jute की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0141",
+    "language": "as",
+    "instruction": "Guwahatiত Paddy খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Guwahatiৰ বতৰৰ ওপৰত ভিত্তি কৰি Paddy শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0142",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Tea in Dibrugarh.",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Tea in Dibrugarh: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0143",
+    "language": "hi",
+    "instruction": "New Delhi में Mustard की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhi के मौसम को देखते हुए Mustard की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0144",
+    "language": "as",
+    "instruction": "Lucknowত Wheat খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Lucknow: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Lucknowৰ বতৰৰ ওপৰত ভিত্তি কৰি Wheat শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0145",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Jute in Kolkata.",
+    "context": "Current weather in Kolkata: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Jute in Kolkata: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0146",
+    "language": "hi",
+    "instruction": "Jorhat में Paddy की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Jorhat: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Jorhat के मौसम को देखते हुए Paddy की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0147",
+    "language": "as",
+    "instruction": "Shillongত Tea খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in Shillong: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Shillongৰ বতৰৰ ওপৰত ভিত্তি কৰি Tea শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  },
+  {
+    "id": "sample_0148",
+    "language": "en",
+    "instruction": "Provide agricultural weather advisory for Mustard in Guwahati.",
+    "context": "Current weather in Guwahati: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Agro-Meteorological advisory for Mustard in Guwahati: Maintain proper drainage bunds and delay chemical spraying if precipitation is forecasted."
+  },
+  {
+    "id": "sample_0149",
+    "language": "hi",
+    "instruction": "Dibrugarh में Wheat की फसल के लिए मौसम आधारित कृषि सलाह दें।",
+    "context": "Current weather in Dibrugarh: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 Dibrugarh के मौसम को देखते हुए Wheat की फसल के लिए सलाह: खेत में जल निकासी सुनिश्चित करें और केवल साफ मौसम में ही कीटनाशक का छिड़काव करें।"
+  },
+  {
+    "id": "sample_0150",
+    "language": "as",
+    "instruction": "New Delhiত Jute খেতিৰ বাবে বতৰৰ পৰামৰ্শ দিয়ক।",
+    "context": "Current weather in New Delhi: 28.5°C, humidity 78%, precipitation 4.0mm.",
+    "response": "📍 New Delhiৰ বতৰৰ ওপৰত ভিত্তি কৰি Jute শস্যৰ পৰামৰ্শ: বৰষুণৰ সম্ভাৱনা থাকিলে পানী নিষ্কাশনৰ ব্যৱস্থা কৰক আৰু পৰিষ্কাৰ দিনতহে সাৰ ছটিয়াব।"
+  }
+]
