@@ -28,6 +28,8 @@ pipeline_tag: text-generation
 
 # 🌦️ Model Card: WeatherGPT-Indic-8B-Instruct
 
+> ⚠️ **Status: draft / not trained.** This card describes a *target* model. No adapter has been trained or published from this repository (`scripts/train_indic_lora.py` generates a corpus and LoRA configuration only), and the adapter repository referenced below does not exist. Metrics are omitted rather than estimated.
+
 **WeatherGPT-Indic-8B-Instruct** is an Indic multilingual parameter-efficient instruction-tuned model designed for conversational meteorological intelligence, official India Meteorological Department (IMD) bulletin reasoning, Numerical Weather Prediction (NWP/GFS) interpretation, and Gramin Krishi Mausam Sewa (GKMS) agricultural advisory generation.
 
 The model natively supports **English**, **Hindi**, and **Assamese** (`as`), providing localized agricultural insights (paddy, tea, mustard, jute, wheat) and severe weather safety guidance across Northeast and Pan-India agro-climatic zones.
@@ -46,16 +48,9 @@ The model natively supports **English**, **Hindi**, and **Assamese** (`as`), pro
 
 ## 📊 Benchmark Evaluation Metrics
 
-Evaluated on the standardized **WeatherGPT-50 Multilingual Benchmark Suite**:
+**Not measured.** No adapter has been trained, so no model metrics exist. Figures previously listed in this card were not reproducible from this repository and have been removed.
 
-| Metric | Score / Value |
-| :--- | :---: |
-| **Overall Falsifiable Correctness** | **94.2%** |
-| **Tool Selection Precision & Recall** | **96.0%** |
-| **Language Consistency (Script & Syntax)** | **98.0%** |
-| **Mean Execution Latency** | **~850 ms** |
-| **p50 Latency** | **780 ms** |
-| **p95 Latency** | **1,950 ms** |
+For the *agent's* behaviour on the 50-item rubric (tool routing, language consistency, keyword recall, response length — not model quality), see [`evals/RESULTS.md`](../../evals/RESULTS.md).
 
 ---
 
@@ -74,6 +69,8 @@ WeatherGPT is trained to output JSON-schema structured tool calls against the fo
 ---
 
 ## 🚀 Quickstart & Inference
+
+*(Illustrative: the adapter below has not been published — see the status note at the top of this card.)*
 
 ```python
 import torch

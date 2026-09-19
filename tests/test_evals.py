@@ -3,7 +3,7 @@
 import json
 import os
 
-from evals.run_evals import calculate_percentile
+from evals.run_evals import calculate_percentile, classify_provenance
 
 
 def test_eval_dataset_integrity():
@@ -38,3 +38,30 @@ def test_percentile_calculation():
 
     p90 = calculate_percentile(data, 90)
     assert p90 >= 90.0
+
+
+def test_provenance_classification():
+    """A run that used any synthetic fallback data must never be reported as live."""
+
+    class _Call:
+        def __init__(self, result):
+            self.result = result
+
+    assert classify_provenance([_Call({"source": "Open-Meteo Live API"})]) == "live-upstream"
+    assert classify_provenance([_Call({"source": "Open-Meteo Air Quality API (live)"})]) == "live-upstream"
+    assert (
+        classify_provenance([_Call({"source": "Synthetic fallback (upstream AQI API unavailable, not a measurement)"})])
+        == "synthetic-fallback"
+    )
+    assert classify_provenance([_Call({"topic": "bordoisila"})]) == "offline-static"
+    assert classify_provenance([]) == "offline-static"
+    assert classify_provenance([_Call([{"source": "WeatherGPT static reference bulletins (not a live IMD feed)"}])]) == (
+        "offline-static"
+    )
+
+    # Mixed live + synthetic must be downgraded to synthetic, never reported as live.
+    mixed = [
+        _Call({"source": "Open-Meteo Live API"}),
+        _Call({"source": "Open-Meteo High-Resolution Model (Synthetic fallback: upstream API unavailable)"}),
+    ]
+    assert classify_provenance(mixed) == "synthetic-fallback"

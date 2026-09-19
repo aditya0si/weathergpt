@@ -1,4 +1,10 @@
-"""India Meteorological Department (IMD) bulletins and severe weather alerts aggregator."""
+"""Static IMD-style severe weather alert reference set.
+
+IMPORTANT: no IMD endpoint is queried. The bulletins below are a static,
+hand-written reference set (dated 2026-08-24) used for demos and tests; they are
+NOT live India Meteorological Department warnings. `source` on every alert says so
+explicitly. See README "Data provenance & known limitations".
+"""
 
 from typing import List, Optional
 
@@ -6,10 +12,13 @@ import httpx
 
 from weathergpt.core.models import AlertSeverity, GeoLocation, IMDAlert
 
-# Dynamic regional IMD alert repository
+# Static regional IMD-style alert reference set (not a live feed — see module docstring)
+IMD_STATIC_SOURCE = "WeatherGPT static reference bulletins (not a live IMD feed)"
+
 STATE_DISTRICT_IMD_ALERTS: List[IMDAlert] = [
     IMDAlert(
         alert_id="IMD-AS-2026-0801",
+        source=IMD_STATIC_SOURCE,
         district="Kamrup Metropolitan",
         state="Assam",
         severity=AlertSeverity.ORANGE,
@@ -38,6 +47,7 @@ STATE_DISTRICT_IMD_ALERTS: List[IMDAlert] = [
     ),
     IMDAlert(
         alert_id="IMD-AS-2026-0802",
+        source=IMD_STATIC_SOURCE,
         district="Dibrugarh",
         state="Assam",
         severity=AlertSeverity.YELLOW,
@@ -60,6 +70,7 @@ STATE_DISTRICT_IMD_ALERTS: List[IMDAlert] = [
     ),
     IMDAlert(
         alert_id="IMD-ML-2026-0803",
+        source=IMD_STATIC_SOURCE,
         district="East Khasi Hills",
         state="Meghalaya",
         severity=AlertSeverity.RED,
@@ -82,6 +93,7 @@ STATE_DISTRICT_IMD_ALERTS: List[IMDAlert] = [
     ),
     IMDAlert(
         alert_id="IMD-DL-2026-0804",
+        source=IMD_STATIC_SOURCE,
         district="New Delhi",
         state="Delhi",
         severity=AlertSeverity.YELLOW,
@@ -104,6 +116,7 @@ STATE_DISTRICT_IMD_ALERTS: List[IMDAlert] = [
     ),
     IMDAlert(
         alert_id="IMD-MH-2026-0805",
+        source=IMD_STATIC_SOURCE,
         district="Mumbai City",
         state="Maharashtra",
         severity=AlertSeverity.ORANGE,
@@ -126,6 +139,7 @@ STATE_DISTRICT_IMD_ALERTS: List[IMDAlert] = [
     ),
     IMDAlert(
         alert_id="IMD-WB-2026-0806",
+        source=IMD_STATIC_SOURCE,
         district="Kolkata",
         state="West Bengal",
         severity=AlertSeverity.YELLOW,
@@ -176,6 +190,7 @@ class IMDAlertService:
             results.append(
                 IMDAlert(
                     alert_id=f"IMD-{loc.name[:2].upper()}-GEN-00",
+                    source=IMD_STATIC_SOURCE,
                     district=loc.admin2 or loc.name,
                     state=loc.admin1 or "India",
                     severity=AlertSeverity.GREEN,

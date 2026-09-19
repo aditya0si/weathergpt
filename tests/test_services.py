@@ -1,5 +1,6 @@
 """Unit and integration tests for WeatherGPT data services."""
 
+import httpx
 import pytest
 
 from weathergpt.core.models import AlertSeverity, GeoLocation
@@ -121,3 +122,49 @@ def test_climate_kb_service():
     wd_fact = climate_kb_service.search_climate_knowledge("Western Disturbance winter rains")
     assert wd_fact is not None
     assert wd_fact.topic == "western_disturbance"
+
+
+@pytest.mark.asyncio
+async def test_openmeteo_fallback_is_labelled_synthetic(monkeypatch):
+    """Fabricated fallback data must never be presented as a live measurement."""
+
+    async def _upstream_down(*args, **kwargs):
+        raise httpx.ConnectError("simulated upstream outage")
+
+    monkeypatch.setattr(httpx.AsyncClient, "get", _upstream_down)
+
+    loc = GeoLocation(name="Dibrugarh", latitude=27.4728, longitude=94.9120, admin1="Assam")
+    forecast = await openmeteo_service.get_forecast(loc)
+    assert "synthetic" in forecast.source.lower()
+    assert "live" not in forecast.source.lower()
+
+    aqi = await openmeteo_service.get_air_quality(loc)
+    assert "synthetic" in aqi.source.lower()
+    assert "live" not in aqi.source.lower()
+
+
+@pytest.mark.asyncio
+async def test_imd_alerts_are_labelled_as_static_reference_data():
+    """The shipped bulletins are a static reference set, not a live IMD feed."""
+    loc = GeoLocation(
+        name="Guwahati",
+        latitude=26.1445,
+        longitude=91.7362,
+        admin1="Assam",
+        admin2="Kamrup Metropolitan",
+    )
+    alerts = await imd_service.get_alerts_for_location(loc)
+    assert len(alerts) >= 1
+    for alert in alerts:
+        assert "static reference" in alert.source.lower()
+        # The payload must not attribute the bulletin to IMD as a live source.
+        assert "india meteorological department" not in alert.source.lower()
+
+
+@pytest.mark.asyncio
+async def test_gfs_output_is_labelled_as_an_analytic_estimate():
+    """GFS indices are computed analytically, not read from a NOAA model run."""
+    loc = GeoLocation(name="Kolkata", latitude=22.5726, longitude=88.3639, admin1="West Bengal")
+    gfs = await gfs_service.get_gfs_prediction(loc)
+    assert "analytic" in gfs.source.lower()
+    assert "not noaa gfs model output" in gfs.source.lower()

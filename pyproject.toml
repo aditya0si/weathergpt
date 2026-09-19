@@ -47,6 +47,11 @@ where = ["src"]
 asyncio_mode = "auto"
 testpaths = ["tests"]
 python_files = ["test_*.py"]
+# Repo root on sys.path so tests can import the `evals` harness package
+# (tests/test_evals.py imports evals.run_evals). Required because CI invokes the
+# `pytest` console script, which - unlike `python -m pytest` - does not put the
+# working directory on sys.path.
+pythonpath = ["."]
 
 [tool.ruff]
 line-length = 120

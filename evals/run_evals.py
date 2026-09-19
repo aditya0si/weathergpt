@@ -1,9 +1,20 @@
-"""WeatherGPT 50-Item Multilingual Benchmark Evaluation Harness."""
+"""WeatherGPT 50-Item Multilingual Benchmark Evaluation Harness.
 
+The harness scores the live agent against a fixed rubric (tool selection,
+language consistency, keyword recall, response length) and can be used as a CI
+gate via --fail-under.
+
+It also reports the *data provenance* of the run: whether each case was answered
+from live upstream APIs (Open-Meteo) or from the offline synthetic fallback, so
+a reported score can never be mistaken for a fully live-data measurement.
+"""
+
+import argparse
 import asyncio
 import json
 import math
 import os
+import sys
 import time
 from typing import Any, Dict, List
 
@@ -11,6 +22,8 @@ from tabulate import tabulate
 
 from weathergpt.agent.engine import weather_agent
 from weathergpt.core.models import ChatRequest
+
+DEFAULT_FAIL_UNDER = 85.0
 
 
 def calculate_percentile(data: List[float], percentile: float) -> float:
@@ -28,7 +41,50 @@ def calculate_percentile(data: List[float], percentile: float) -> float:
     return round(d0 + d1, 2)
 
 
-async def run_benchmark(dataset_path: str, results_output_path: str) -> Dict[str, Any]:
+def _iter_sources(tool_calls: List[Any]) -> List[str]:
+    """Yields the `source` strings reported by the tools that ran for one case."""
+    sources: List[str] = []
+    for call in tool_calls:
+        result = call.result
+        if isinstance(result, dict) and isinstance(result.get("source"), str):
+            sources.append(result["source"])
+        elif isinstance(result, list):
+            for item in result:
+                if isinstance(item, dict) and isinstance(item.get("source"), str):
+                    sources.append(item["source"])
+    return sources
+
+
+# Explicit provenance markers. Prose is not parsed loosely: an honest string such
+# as "not a live IMD feed" must not be read as a live-data marker.
+SYNTHETIC_MARKERS = ("synthetic", "fabricated", "not a measurement")
+LIVE_MARKERS = ("live api", "(live)")
+
+
+def classify_provenance(tool_calls: List[Any]) -> str:
+    """Classifies where a case's answer data came from.
+
+    Returns one of:
+      - "synthetic-fallback": at least one tool served locally generated
+        (synthetic) data instead of an upstream reading.
+      - "live-upstream": at least one tool served live upstream data and none
+        served synthetic data.
+      - "offline-static": no tool used an upstream data source (static knowledge
+        base, static alert reference set, or analytic estimate only).
+    """
+    sources = [s.lower() for s in _iter_sources(tool_calls)]
+    if any(marker in s for s in sources for marker in SYNTHETIC_MARKERS):
+        return "synthetic-fallback"
+    if any(marker in s for s in sources for marker in LIVE_MARKERS):
+        return "live-upstream"
+    return "offline-static"
+
+
+async def run_benchmark(
+    dataset_path: str,
+    results_output_path: str,
+    fail_under: float = DEFAULT_FAIL_UNDER,
+) -> Dict[str, Any]:
     """Runs the 50-case benchmark evaluation suite."""
     print("=" * 80)
     print("🌦️ WeatherGPT Indic Multilingual Benchmark Evaluation Suite (50 Test Cases)")
@@ -48,6 +104,7 @@ async def run_benchmark(dataset_path: str, results_output_path: str) -> Dict[str
     category_scores = {}
     lang_scores = {"en": [], "hi": [], "as": []}
     tool_accuracies = []
+    provenance_counts = {"live-upstream": 0, "synthetic-fallback": 0, "offline-static": 0}
 
     for i, case in enumerate(cases, 1):
         cid = case["id"]
@@ -86,13 +143,17 @@ async def run_benchmark(dataset_path: str, results_output_path: str) -> Dict[str
                  0.25 * kw_coverage +
                  0.10 * (1.0 if len_valid else 0.0)) * 100.0
 
+        provenance = classify_provenance(resp.tool_calls)
+        provenance_counts[provenance] += 1
+
         if cat not in category_scores:
             category_scores[cat] = []
         category_scores[cat].append(score)
         lang_scores[lang].append(score)
 
         status_emoji = "✅" if score >= 80.0 else "⚠️"
-        print(f"[{i:02d}/50] {status_emoji} {cid} ({lang.upper()}) | Cat: {cat:<16} | Tools: {called_tools} | Score: {score:.1f}% | Latency: {elapsed_ms:.1f}ms")
+        print(f"[{i:02d}/50] {status_emoji} {cid} ({lang.upper()}) | Cat: {cat:<16} | Tools: {called_tools} | "
+              f"Data: {provenance} | Score: {score:.1f}% | Latency: {elapsed_ms:.1f}ms")
 
         results.append({
             "id": cid,
@@ -104,6 +165,7 @@ async def run_benchmark(dataset_path: str, results_output_path: str) -> Dict[str
             "tool_hit": tool_hit,
             "lang_match": lang_match,
             "kw_coverage": round(kw_coverage * 100, 1),
+            "provenance": provenance,
             "latency_ms": elapsed_ms,
         })
 
@@ -115,6 +177,7 @@ async def run_benchmark(dataset_path: str, results_output_path: str) -> Dict[str
     p95_lat = calculate_percentile(latencies, 95)
     p99_lat = calculate_percentile(latencies, 99)
     avg_lat = round(sum(latencies) / len(latencies), 2)
+    generated_at = time.strftime("%Y-%m-%d %H:%M:%SZ", time.gmtime())
 
     cat_table_rows = []
     for cat, scores in category_scores.items():
@@ -133,6 +196,9 @@ async def run_benchmark(dataset_path: str, results_output_path: str) -> Dict[str
         ["p90 Latency", f"{p90_lat} ms"],
         ["p95 Latency", f"{p95_lat} ms"],
         ["p99 Latency", f"{p99_lat} ms"],
+        ["Cases answered from live upstream data", provenance_counts["live-upstream"]],
+        ["Cases answered from the synthetic fallback", provenance_counts["synthetic-fallback"]],
+        ["Cases with no upstream call (static KB / analytic estimate)", provenance_counts["offline-static"]],
     ]
 
     print("\n" + "=" * 80)
@@ -146,8 +212,26 @@ async def run_benchmark(dataset_path: str, results_output_path: str) -> Dict[str
     print("\n📁 ACCURACY BY DOMAIN CATEGORY")
     print(tabulate(cat_table_rows, headers=["Category", "Count", "Accuracy"], tablefmt="grid"))
 
+    if provenance_counts["synthetic-fallback"]:
+        print(
+            f"\n⚠️  {provenance_counts['synthetic-fallback']}/{len(results)} cases were answered from the "
+            "synthetic fallback generator because an upstream API was unavailable: those cases measure "
+            "agent routing and response formatting, not upstream data accuracy."
+        )
+
     # Write RESULTS.md
     markdown_content = f"""# WeatherGPT Indic Multilingual Benchmark Results
+
+> Generated by `python evals/run_evals.py` on {generated_at} (UTC).
+> Latency figures are specific to the machine and network path of that run;
+> the correctness / tool-selection figures are reproducible for the same commit.
+
+## Data provenance for this run
+| Provenance | Cases |
+| :--- | :---: |
+| Live upstream data (Open-Meteo) | {provenance_counts['live-upstream']} |
+| Synthetic fallback (upstream unavailable) | {provenance_counts['synthetic-fallback']} |
+| No upstream call (static KB / analytic estimate) | {provenance_counts['offline-static']} |
 
 ## Executive Summary
 Evaluation performed on **{len(results)}** curated multilingual test cases spanning English (`en`), Hindi (`hi`), and Assamese (`as`).
@@ -179,16 +263,26 @@ Evaluation performed on **{len(results)}** curated multilingual test cases spann
         markdown_content += f"| {cat.replace('_', ' ').title()} | {len(scores)} | {sum(scores)/len(scores):.2f}% |\n"
 
     markdown_content += "\n## Detailed Sample Breakdown\n"
-    markdown_content += "| ID | Lang | Category | Prompt | Tools Executed | Score | Latency |\n"
-    markdown_content += "| :--- | :---: | :--- | :--- | :--- | :---: | :---: |\n"
+    markdown_content += "| ID | Lang | Category | Prompt | Tools Executed | Data | Score | Latency |\n"
+    markdown_content += "| :--- | :---: | :--- | :--- | :--- | :---: | :---: | :---: |\n"
     for r in results[:15]:
         tools_str = ", ".join(r["called_tools"])
-        markdown_content += f"| `{r['id']}` | {r['language'].upper()} | {r['category']} | {r['prompt'][:45]}... | `{tools_str}` | {r['score']}% | {r['latency_ms']}ms |\n"
+        markdown_content += (f"| `{r['id']}` | {r['language'].upper()} | {r['category']} | {r['prompt'][:45]}... | "
+                             f"`{tools_str}` | {r['provenance']} | {r['score']}% | {r['latency_ms']}ms |\n")
 
     with open(results_output_path, "w", encoding="utf-8") as f:
         f.write(markdown_content)
 
     print(f"\n✅ Results report generated at: {results_output_path}")
+
+    if total_avg_score < fail_under:
+        print(
+            f"\n❌ GATE FAILED: overall correctness {total_avg_score}% is below the required floor of {fail_under}%.",
+            file=sys.stderr,
+        )
+        sys.exit(1)
+
+    print(f"\n✅ GATE PASSED: overall correctness {total_avg_score}% >= required floor of {fail_under}%.")
 
     return {
         "total_cases": len(results),
@@ -196,11 +290,33 @@ Evaluation performed on **{len(results)}** curated multilingual test cases spann
         "tool_accuracy": avg_tool_acc,
         "p50_latency_ms": p50_lat,
         "p95_latency_ms": p95_lat,
+        "provenance_counts": provenance_counts,
     }
 
 
-if __name__ == "__main__":
+def main() -> None:
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    dataset_file = os.path.join(base_dir, "data", "weathergpt_eval_50.json")
-    results_file = os.path.join(base_dir, "RESULTS.md")
-    asyncio.run(run_benchmark(dataset_file, results_file))
+    parser = argparse.ArgumentParser(description="WeatherGPT 50-item multilingual benchmark harness")
+    parser.add_argument(
+        "--dataset",
+        default=os.path.join(base_dir, "data", "weathergpt_eval_50.json"),
+        help="Path to the evaluation dataset JSON",
+    )
+    parser.add_argument(
+        "--output",
+        default=os.path.join(base_dir, "RESULTS.md"),
+        help="Where to write the markdown results report",
+    )
+    parser.add_argument(
+        "--fail-under",
+        type=float,
+        default=DEFAULT_FAIL_UNDER,
+        help=f"Exit non-zero if overall correctness is below this value (default: {DEFAULT_FAIL_UNDER})",
+    )
+    args = parser.parse_args()
+
+    asyncio.run(run_benchmark(args.dataset, args.output, args.fail_under))
+
+
+if __name__ == "__main__":
+    main()
