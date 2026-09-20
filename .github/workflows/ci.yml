@@ -1,4 +1,4 @@
-name: WeatherGPT CI/CD Pipeline
+name: WeatherGPT CI
 
 on:
   push:
@@ -8,9 +8,12 @@ on:
 
 jobs:
   backend-tests:
-    name: Backend Lint, Pytest & Evals (Python ${{ matrix.python-version }})
+    name: Backend Lint, Pytest & Benchmark Gate (Python ${{ matrix.python-version }})
     runs-on: ubuntu-latest
     strategy:
+      # Both Python legs must report their own result; a failure in one leg must
+      # not cancel the other (the cancelled 3.11 leg previously hid its status).
+      fail-fast: false
       matrix:
         python-version: ["3.11", "3.12"]
 
@@ -37,16 +40,23 @@ jobs:
         run: |
           pytest -v --cov=weathergpt --cov-report=term-missing
 
-      - name: Run 50-Item Benchmark Evaluation Suite
+      # Real gate: exits non-zero if overall correctness drops below the floor.
+      # Results are written to a scratch path so CI does not rewrite the
+      # committed evals/RESULTS.md snapshot. The harness prints the data
+      # provenance (live upstream vs synthetic fallback) for the run.
+      - name: "Benchmark harness (50 cases, gate: overall correctness >= 85%)"
         run: |
-          python evals/run_evals.py
+          python evals/run_evals.py --fail-under 85 --output "$RUNNER_TEMP/benchmark_results.md"
+          cat "$RUNNER_TEMP/benchmark_results.md"
 
-      - name: Verify LoRA Fine-Tuning Script Dry-Run
+      # Smoke test only: generates the synthetic corpus and LoRA adapter config.
+      # No training and no metrics are produced (see scripts/train_indic_lora.py).
+      - name: LoRA pipeline dry-run smoke test (no training performed)
         run: |
-          python scripts/train_indic_lora.py --synthetic-dry-run --epochs 1
+          python scripts/train_indic_lora.py --synthetic-dry-run --epochs 1 --output-dir "$RUNNER_TEMP/indic-lora-dry-run"
 
   frontend-build:
-    name: Frontend Lint & Build (Node.js)
+    name: Frontend Build (Node.js)
     runs-on: ubuntu-latest
 
     steps:
@@ -56,13 +66,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
           cache: 'npm'
-          cache-dependency-path: frontend/package.json
+          cache-dependency-path: frontend/package-lock.json
 
+      # No npm fallback: package-lock.json is committed and must stay installable.
       - name: Install frontend dependencies
         working-directory: frontend
-        run: npm ci || npm install
+        run: npm ci
 
       - name: Build Vite static bundle
         working-directory: frontend

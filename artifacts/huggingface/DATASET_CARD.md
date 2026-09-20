@@ -21,6 +21,8 @@ size_categories:
 
 # 📚 Dataset Card: IndicWeather-Bench-50k & Eval-50
 
+> ⚠️ **Status: partially published.** Only the 50-item evaluation set (`evals/data/weathergpt_eval_50.json`) is included in this repository. The 50,000-sample training corpus is **not** included or published; the counts below describe the intended dataset, not shipped data.
+
 ## Dataset Description
 **IndicWeather-Bench-50k** is a trilingual (English, Hindi, Assamese) meteorological reasoning and tool-calling dataset curated for SIH26068 (WeatherGPT). It is paired with the standardized **WeatherGPT-50** golden evaluation set designed to benchmark conversational agents on multi-turn weather queries, agricultural advisories, severe disaster warnings, and climate science Q&A.
 

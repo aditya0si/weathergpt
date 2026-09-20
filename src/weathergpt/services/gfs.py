@@ -57,6 +57,7 @@ class GFSService:
             simulated_reflectivity_dbz=reflectivity,
             cyclone_genesis_index=cyclone_index,
             synoptic_summary=synoptic,
+            source="WeatherGPT analytic estimate (not NOAA GFS model output)",
         )
 
 

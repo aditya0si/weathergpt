@@ -130,7 +130,7 @@ class OpenMeteoService:
             current=current,
             daily=daily,
             hourly_summary=hourly,
-            source="Open-Meteo High-Resolution Model (Synthetic Verified)",
+            source="Open-Meteo High-Resolution Model (Synthetic fallback: upstream API unavailable, not a measurement)",
         )
 
     def _generate_synthetic_air_quality(self, loc: GeoLocation) -> AirQualityData:
@@ -158,6 +158,7 @@ class OpenMeteoService:
             health_advice_as="বায়ুৰ মান গ্ৰহণযোগ্য। সংবেদনশীল ব্যক্তিসকলে বাহিৰত বেছি সময় থকাৰ পৰা বিৰত থাকক।"
             if aqi <= 100 else "বায়ুৰ গুণমান উদ্বেগজনক। বাহিৰলৈ ওলালে মাস্ক পৰিধান কৰক।",
             location=loc,
+            source="Synthetic fallback (upstream AQI API unavailable, not a measurement)",
         )
 
     async def get_forecast(self, loc: GeoLocation) -> WeatherForecastResponse:
@@ -283,6 +284,7 @@ class OpenMeteoService:
                         health_advice_hi="अधिकांश लोगों के लिए वायु गुणवत्ता संतोषजनक है।",
                         health_advice_as="অধিকাংশ লোকৰ বাবে বায়ুৰ মান সন্তোষজনক।",
                         location=loc,
+                        source="Open-Meteo Air Quality API (live)",
                     )
         except Exception as e:
             logger.warning(f"Open-Meteo AQI error for {loc.name}: {e}. Using synthetic AQI.")

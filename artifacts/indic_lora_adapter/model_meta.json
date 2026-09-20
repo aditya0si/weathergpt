@@ -7,7 +7,8 @@
     "as"
   ],
   "dataset_size_samples": 150,
-  "final_loss": 1.0545,
-  "final_perplexity": 2.87,
-  "training_completed_at": "2026-08-24T18:17:42Z"
+  "training_performed": false,
+  "metrics": null,
+  "note": "Dry-run artifact: corpus and LoRA configuration only. No base model was loaded, no training ran and no loss/perplexity was measured.",
+  "generated_at": "2026-09-19T22:55:21Z"
 }

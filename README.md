@@ -1,7 +1,7 @@
 # 🌦️ WeatherGPT (SIH26068)
 ### Indic Multilingual Conversational AI Weather & Agro-Meteorological Intelligence Platform
 
-[![CI/CD Pipeline](https://github.com/sih26068/weathergpt/actions/workflows/ci.yml/badge.svg)](https://github.com/sih26068/weathergpt/actions)
+[![CI](https://github.com/aditya0si/weathergpt/actions/workflows/ci.yml/badge.svg)](https://github.com/aditya0si/weathergpt/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-3776AB.svg?logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110+-009688.svg?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
@@ -81,11 +81,11 @@ graph TD
 ## ✨ Key Features & Capabilities
 
 - **Trilingual Conversational Agent**: Native support for **English**, **Hindi**, and **Assamese** (`as`) with zero-shot script recognition, transliteration parsing, and culturally grounded responses.
-- **Official IMD Severe Weather Warnings**: Real-time parsing of district-level color-coded warnings (Green, Yellow, Orange, Red) for storms, heavy rainfall, high tides, and heatwaves with safety precautions.
+- **IMD-style Severe Weather Bulletins**: district-level color-coded warnings (Green, Yellow, Orange, Red) with safety precautions, served from a **static hand-written reference set** — no IMD endpoint is queried and every payload is labelled `source="WeatherGPT static reference bulletins (not a live IMD feed)"`.
 - **GKMS Agro-Meteorological Advisories**: Weather-conditioned farming directives for **Paddy (Sali/Ahu)**, **Tea (Assam/Dooars)**, **Mustard**, **Wheat**, **Jute**, and horticulture.
-- **NOAA GFS Atmospheric Physics**: Extracts atmospheric instability metrics including Convective Available Potential Energy (CAPE), precipitable water, and synoptic convective indices.
+- **GFS-style Atmospheric Physics Estimates**: Convective Available Potential Energy (CAPE), precipitable water and synoptic indices **computed analytically from coordinates** — these are estimates, not NOAA GFS model output (labelled as such in the payload).
 - **Transparent Tool Execution**: Real-time tool call inspection tray displaying invoked function parameters, raw output JSON payloads, and execution latency.
-- **Robust Offline Fallback**: Embedded deterministic Indic router ensures that 100% of features, evaluations, and tests run with zero external API key requirements.
+- **Labelled Offline Fallback**: Embedded deterministic Indic router ensures that 100% of features, evaluations, and tests run with zero external API key requirements. When an upstream API is unavailable the locally generated fallback data is labelled `source="... (Synthetic fallback: ... not a measurement)"` so it can never be mistaken for a live reading.
 
 ---
 
@@ -100,15 +100,17 @@ python evals/run_evals.py
 
 ### Summary Benchmark Metrics
 
-| Metric | Result | Target Benchmark | Status |
-| :--- | :---: | :---: | :---: |
-| **Total Test Cases Evaluated** | **50** | 50 | ✅ PASS |
-| **Overall Correctness Score** | **94.59%** | > 85.0% | ✅ PASS |
-| **Tool Selection Accuracy** | **100.0%** | > 90.0% | ✅ PASS |
-| **Average Latency (Mean)** | **1015.7 ms** | < 2000 ms | ✅ PASS |
-| **p50 Latency (Median)** | **771.3 ms** | < 1000 ms | ✅ PASS |
-| **p90 Latency** | **2432.4 ms** | < 3000 ms | ✅ PASS |
-| **p95 Latency** | **2519.5 ms** | < 3500 ms | ✅ PASS |
+*Result column: a single local run of `evals/run_evals.py` on the current commit (see [`evals/RESULTS.md`](evals/RESULTS.md) for the timestamped snapshot and the data-provenance breakdown of that run). Latency figures are specific to the machine and network path; only the overall-correctness floor is enforced by CI.*
+
+| Metric | Result | CI gate |
+| :--- | :---: | :---: |
+| **Total Test Cases Evaluated** | **50** | — |
+| **Overall Correctness Score** | **94.59%** | ✅ enforced: `--fail-under 85` |
+| **Tool Selection Accuracy** | **100.0%** | not enforced |
+| **Average Latency (Mean)** | **1015.7 ms** | not enforced |
+| **p50 Latency (Median)** | **771.3 ms** | not enforced |
+| **p90 Latency** | **2432.4 ms** | not enforced |
+| **p95 Latency** | **2519.5 ms** | not enforced |
 
 ### Accuracy Breakdown by Language
 
@@ -131,6 +133,28 @@ python evals/run_evals.py
 | **7-Day Weather Forecast** | 7 | **89.88%** |
 
 *(Complete itemized evaluation results are generated in [`evals/RESULTS.md`](evals/RESULTS.md))*
+
+---
+
+## 🔍 Data Provenance & Known Limitations
+
+WeatherGPT mixes live, static and synthetic data. Every payload carries a `source` field stating which one it is:
+
+| Capability | Data source today | Provenance field |
+| :--- | :--- | :--- |
+| Current weather / 7-day forecast | Live [Open-Meteo](https://open-meteo.com) API, with a locally generated fallback when the API is unreachable | `source` on the forecast response: `"Open-Meteo Live API"` or `"... (Synthetic fallback: upstream API unavailable, not a measurement)"` |
+| Air quality (AQI, PM2.5, PM10) | Live Open-Meteo Air-Quality API, same fallback behaviour | `source` on `AirQualityData` |
+| IMD severe weather warnings | **Static hand-written reference set** (6 bulletins dated 2026-08-24). No IMD endpoint is queried; there is no live IMD integration in this repository | `source="WeatherGPT static reference bulletins (not a live IMD feed)"` |
+| NOAA GFS indices (CAPE, precipitable water, shear) | **Analytic estimates computed from coordinates** — not NOAA GFS model output | `source="WeatherGPT analytic estimate (not NOAA GFS model output)"` |
+| GKMS crop advisories | Rule-based advisories derived from the Open-Meteo forecast | — |
+| Climate science Q&A | Static in-repo knowledge base (`climate_kb.py`) | — |
+| Benchmark harness | `evals/run_evals.py`; every run reports how many cases were answered from live vs synthetic data | `evals/RESULTS.md` |
+
+Known limitations:
+- The IMD bulletin set is static and time-stamped 2026-08-24: it will not reflect current warnings. Do not use it for safety decisions.
+- GFS indices are estimates for demonstration and routing purposes, not model output; do not use them for forecasting.
+- The LoRA fine-tuning script does not train (see the section above); no model card metrics have been measured.
+- The benchmark harness scores agent behaviour (tool routing, language consistency, keyword recall, length) against a fixed rubric; it is not a forecast-accuracy evaluation.
 
 ---
 
@@ -186,7 +210,7 @@ python scripts/run_demo.py
 
 ---
 
-## 🧪 Automated Testing & CI/CD
+## 🧪 Automated Testing & CI
 
 Run the comprehensive pytest suite:
 ```bash
@@ -203,22 +227,30 @@ Run code formatting and linter:
 ruff check src/ tests/ evals/ scripts/
 ```
 
-GitHub Actions CI configuration is located at [`.github/workflows/ci.yml`](.github/workflows/ci.yml) and executes automated linting, test suites on Python 3.11/3.12, the 50-item evaluation harness, and frontend static build on every push.
+Run the benchmark harness as a gate (exits non-zero below the floor):
+```bash
+python evals/run_evals.py --fail-under 85
+```
+
+GitHub Actions CI configuration is located at [`.github/workflows/ci.yml`](.github/workflows/ci.yml). On every push/PR it runs, as real gates on Python 3.11 and 3.12: ruff lint, the pytest suite, and the 50-item benchmark harness with `--fail-under 85`; the frontend job runs `npm ci` and the Vite production build on Node.js. There is **no deployment/CD job** in this repository — CI stops at verified build + tests, and no container image or hosted deployment is produced here.
 
 ---
 
 ## 🤖 Machine Learning & Fine-Tuning Pipeline
 
-WeatherGPT provides a parameter-efficient instruction fine-tuning script (`scripts/train_indic_lora.py`) using Hugging Face `transformers` and `peft` (QLoRA) to fine-tune Indic foundation models (e.g. `meta-llama/Meta-Llama-3-8B-Instruct` or `sarvamai/sarvam-1`) on multilingual meteorological datasets.
+`scripts/train_indic_lora.py` generates a synthetic Indic instruction corpus and a PEFT/LoRA adapter configuration (target: `meta-llama/Meta-Llama-3-8B-Instruct` or `sarvamai/sarvam-1`).
 
-Run fine-tuning dry-run / training:
+**No training is implemented.** The script contains no training loop: it does not load a base model, does not train, and therefore produces no loss, perplexity or parameter-count metrics. `--synthetic-dry-run` is the only supported mode; any other invocation exits non-zero with an explicit "not implemented" error instead of reporting fabricated metrics.
+
 ```bash
 python scripts/train_indic_lora.py --synthetic-dry-run --epochs 3 --batch-size 4
 ```
 
-Hugging Face artifact cards:
-- **Model Card**: [`artifacts/huggingface/MODEL_CARD.md`](artifacts/huggingface/MODEL_CARD.md) (`WeatherGPT-Indic-8B-Instruct`)
-- **Dataset Card**: [`artifacts/huggingface/DATASET_CARD.md`](artifacts/huggingface/DATASET_CARD.md) (`IndicWeather-Bench-50k`)
+The generated `artifacts/indic_lora_adapter/model_meta.json` records `"training_performed": false` with `"metrics": null`. Real QLoRA training would need the optional `ml` extra (`torch`, `transformers`, `peft`, `datasets`, `accelerate` — see `pyproject.toml`) and a GPU.
+
+Hugging Face artifact cards in this repo are **drafts describing a target model/dataset, not published artifacts**:
+- **Model Card (draft)**: [`artifacts/huggingface/MODEL_CARD.md`](artifacts/huggingface/MODEL_CARD.md) — no adapter has been trained or published, so it reports no measured metrics.
+- **Dataset Card (draft)**: [`artifacts/huggingface/DATASET_CARD.md`](artifacts/huggingface/DATASET_CARD.md) — only the 50-item evaluation set is included in this repository.
 
 ---
 

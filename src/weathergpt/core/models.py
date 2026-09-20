@@ -110,6 +110,9 @@ class AirQualityData(BaseModel):
     health_advice_hi: str
     health_advice_as: str
     location: GeoLocation
+    # Provenance of the reading ("live" vs "synthetic fallback"); set explicitly by
+    # the service so fabricated fallback values can never pass as measurements.
+    source: str = "unspecified"
     timestamp: str = Field(default_factory=_get_utc_now_iso)
 
 
@@ -122,7 +125,9 @@ class IMDAlert(BaseModel):
     description: str
     valid_from: str
     valid_to: str
-    source: str = "India Meteorological Department (IMD)"
+    # Provenance of the bulletin. WeatherGPT ships a static reference alert set and
+    # queries no IMD endpoint, so the default must not claim a live IMD feed.
+    source: str = "WeatherGPT static reference bulletins (not a live IMD feed)"
     safety_actions_en: List[str]
     safety_actions_hi: List[str]
     safety_actions_as: List[str]
@@ -139,6 +144,9 @@ class GFSModelPrediction(BaseModel):
     simulated_reflectivity_dbz: float
     cyclone_genesis_index: float  # Scale 0.0 to 10.0
     synoptic_summary: str
+    # Provenance: these values are computed analytically from coordinates, they are
+    # not read from a NOAA GFS model run.
+    source: str = "unspecified"
 
 
 class CropAgroAdvisory(BaseModel):
